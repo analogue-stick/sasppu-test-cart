@@ -9,7 +9,7 @@ from events.input import BUTTON_TYPES, ButtonDownEvent
 from system.eventbus import eventbus
 from system.scheduler.events import RequestStopAppEvent
 
-ASSET_PATH = "./apps/sasppu_test_cart/"
+from .config import ASSET_PATH
 
 class SASPPUTest(SASPPUApp):
     def __init__(self):
