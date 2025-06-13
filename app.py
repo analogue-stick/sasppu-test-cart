@@ -56,14 +56,14 @@ class SASPPUTest(SASPPUApp):
         for i in range(sasppu.MAP_WIDTH * sasppu.MAP_HEIGHT):
             if ((i % 64) >= 32):
                 if (((i / 64) % 64) >= 32):
-                    sasppu.bg0[i] = int((31 - (i % 32)) * 8 + ((31 - (int(i / 64) % 32)) * 256 * 8)) | 0b11
+                    sasppu.bg0[i] = int((31 - (i % 32)) * 4 + ((31 - (int(i / 64) % 32)) * 256 * 4)) | 0b11
                 else:
-                    sasppu.bg0[i] = int((31 - (i % 32)) * 8 + ((int(i / 64) % 32) * 256 * 8)) | 0b01
+                    sasppu.bg0[i] = int((31 - (i % 32)) * 4 + ((int(i / 64) % 32) * 256 * 4)) | 0b01
             else:
                 if (((i / 64) % 64) >= 32):
-                    sasppu.bg0[i] = int((i % 32) * 8 + ((31 - (int(i / 64) % 32)) * 256 * 8)) | 0b10
+                    sasppu.bg0[i] = int((i % 32) * 4 + ((31 - (int(i / 64) % 32)) * 256 * 4)) | 0b10
                 else:
-                    sasppu.bg0[i] = int((i % 32) * 8 + ((int(i / 64) % 32) * 256 * 8)) | 0b00
+                    sasppu.bg0[i] = int((i % 32) * 4 + ((int(i / 64) % 32) * 256 * 4)) | 0b00
 
     def init_sprites(self):
         self.sprites = []
