@@ -15,6 +15,7 @@ class SASPPUTest(SASPPUApp):
     def __init__(self):
         super().__init__()
         self.request_fast_updates = True
+        sasppu.forced_blank = True
         eventbus.on(ButtonDownEvent, self._handle_buttondown, self)
         self.exit = False
         self.ms = sasppu.MainState()
@@ -51,6 +52,8 @@ class SASPPUTest(SASPPUApp):
         sasppu.fill_background(0, 0, self.bg0.WIDTH, self.bg0.HEIGHT, sasppu.grey555(5))
         
         sasppu.draw_text_background(10, 0, sasppu.WHITE, 220, test_text, True)
+
+        sasppu.forced_blank = False
 
     def init_bg0_map(self):
         for i in range(sasppu.MAP_WIDTH * sasppu.MAP_HEIGHT):
